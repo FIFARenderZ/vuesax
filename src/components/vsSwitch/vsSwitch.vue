@@ -100,7 +100,10 @@ export default {
   },
   mounted(){
     this.$nextTick(()=>{
-      let w = this.$refs.on.clientWidth>this.$refs.off.clientWidth?this.$refs.on.clientWidth:this.$refs.off.clientWidth
+      let w = 30
+      if (this.$refs.on && this.$refs.off) {
+        w = this.$refs.on.clientWidth>this.$refs.off.clientWidth?this.$refs.on.clientWidth:this.$refs.off.clientWidth
+      }
       this.widthx = w + 24
     })
 
